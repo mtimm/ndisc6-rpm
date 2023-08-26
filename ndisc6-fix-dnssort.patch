@@ -1,0 +1,21 @@
+diff -up ndisc6-1.0.3/src/dnssort.in.orig ndisc6-1.0.3/src/dnssort.in
+--- ndisc6-1.0.3/src/dnssort.in.orig	2011-09-22 18:00:19.000000000 +0200
++++ ndisc6-1.0.3/src/dnssort.in	2016-11-04 12:59:55.449941126 +0100
+@@ -51,8 +51,7 @@ foreach (@ARGV)
+ 	while(<FD>)
+ 	{
+ 		chomp;
+-		split /\./;
+-		push @names, join('.', reverse @_);
++		push @names, join('.', reverse split /\./);
+ 	}
+ 	close FD;
+ }
+@@ -67,7 +66,6 @@ if ($opt_r)
+ # Print results
+ foreach (@names)
+ {
+-	split /\./;
+-	print join('.', reverse @_)."\n";
++	print join('.', reverse split /\./)."\n";
+ }
