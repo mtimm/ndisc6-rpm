@@ -19,4 +19,4 @@ cp -f "${whereami}"/*.patch    "$SOURCES"
 /usr/bin/spectool -C "$SOURCES" -g "${whereami}/ndisc6.spec "
 
 PATH=/usr/bin:/bin
-rpmbuild -bb "$SPECS/runit.spec"
+rpmbuild -bb "$SPECS/ndisc6.spec"
